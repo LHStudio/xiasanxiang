@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星火燎原：新时代红色教育基地发展洞察</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background-color: #F9FAFB; /* Light Gray Background */
+            color: #111827; /* Dark Gray Text */
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 320px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto px-4 py-8 md:py-16">
+
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight text-gray-900 mb-4">
+                星火燎原
+            </h1>
+            <h2 class="text-2xl md:text-4xl font-bold text-[#D8315B] mb-2">新时代红色教育基地发展洞察</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600">一份关于中国红色文化传承现状、挑战与机遇的数据驱动报告</p>
+        </header>
+
+        <section id="demographics" class="mb-20">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900">参观者画像：谁在探寻红色记忆？</h3>
+                <p class="text-gray-500 mt-2">数据显示，年轻一代已成为红色旅游的中坚力量，但他们的期待正在重塑行业格局。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col justify-between border border-gray-100">
+                    <h4 class="text-xl font-bold text-center mb-4 text-[#0A2463]">年龄构成：年轻力量崛起</h4>
+                    <div class="chart-container">
+                        <canvas id="ageChart"></canvas>
+                    </div>
+                     <p class="text-sm text-gray-500 mt-4 text-center">18-30岁的年轻群体占据主导，他们的媒介习惯和体验偏好是未来发展的关键。</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col justify-between border border-gray-100">
+                    <h4 class="text-xl font-bold text-center mb-4 text-[#0A2463]">访客身份：本地与远方的交汇</h4>
+                    <div class="chart-container">
+                        <canvas id="identityChart"></canvas>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-4 text-center">基地兼具社区文化中心与旅游目的地的双重角色，需平衡本地居民与外地游客的需求。</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col justify-between border border-gray-100">
+                    <h4 class="text-xl font-bold text-center mb-4 text-[#0A2463]">信息渠道：口碑的力量</h4>
+                     <div class="chart-container h-80">
+                        <canvas id="channelChart"></canvas>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-4 text-center">社交媒体与亲友推荐已超越传统渠道，成为触达潜在访客的核心路径。</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col justify-between border border-gray-100">
+                    <h4 class="text-xl font-bold text-center mb-4 text-[#0A2463]">参观频率：忠诚度与增长的悖论</h4>
+                    <div class="chart-container">
+                        <canvas id="frequencyChart"></canvas>
+                    </div>
+                     <p class="text-sm text-gray-500 mt-4 text-center">高复游率体现了内容的内在价值，但首次访客比例偏低，揭示了“拉新”能力的短板。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience-gap" class="mb-20">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900">体验与期待的鸿沟</h3>
+                <p class="text-gray-500 mt-2">尽管价值认同度高，但传统展陈方式与年轻观众的期待存在显著差距。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6 lg:col-span-3 border border-gray-100">
+                    <h4 class="text-xl font-bold text-center mb-4 text-[#0A2463]">展览吸引力诊断：谁更失望？</h4>
+                    <p class="text-sm text-gray-500 mb-4 text-center">近40%的年轻受访者认为现有展览吸引力“一般”或“不足”，外地游客的负面评价比例更高，这直接影响了低频访客的重游意愿。</p>
+                    <div class="chart-container h-96">
+                        <canvas id="attractionChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 lg:col-span-2 flex flex-col justify-center border border-gray-100">
+                    <h4 class="text-xl font-bold text-center mb-6 text-[#0A2463]">公众的呼声：三大核心诉求</h4>
+                    <div class="space-y-6">
+                        <div class="flex items-center bg-gray-100 p-4 rounded-lg">
+                            <div class="text-5xl mr-4">🎮</div>
+                            <div>
+                                <div class="text-2xl font-bold text-gray-800">45票</div>
+                                <div class="text-lg text-gray-700">互动体验活动</div>
+                                <p class="text-xs text-gray-500">渴望通过VR、角色扮演等方式“进入”历史。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center bg-gray-100 p-4 rounded-lg">
+                            <div class="text-5xl mr-4">📱</div>
+                            <div>
+                                <div class="text-2xl font-bold text-gray-800">39票</div>
+                                <div class="text-lg text-gray-700">社交媒体推广</div>
+                                <p class="text-xs text-gray-500">希望在日常使用的平台发现并分享红色故事。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center bg-gray-100 p-4 rounded-lg">
+                            <div class="text-5xl mr-4">🛍️</div>
+                            <div>
+                                <div class="text-2xl font-bold text-gray-800">36票</div>
+                                <div class="text-lg text-gray-700">时尚文创产品</div>
+                                <p class="text-xs text-gray-500">期待将红色记忆物化为生活中的美学符号。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="strategy" class="mb-12">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900">破局之路：四轮驱动的“活化”战略</h3>
+                <p class="text-gray-500 mt-2">为弥合体验鸿沟，报告提出一套以“活化”为核心的系统性解决方案。</p>
+            </div>
+
+            <div class="relative w-full max-w-5xl mx-auto">
+                <div class="hidden md:block absolute top-0 left-1/2 w-1 bg-gray-200 h-full -ml-0.5"></div>
+                
+                <div class="relative mb-12">
+                    <div class="md:flex items-center md:flex-row-reverse">
+                        <div class="md:w-1/2 flex justify-start">
+                            <div class="w-full bg-white rounded-xl shadow-lg p-6 ml-0 md:ml-10 border border-gray-100">
+                                <div class="flex items-center mb-2">
+                                    <div class="text-4xl mr-4">🎬</div>
+                                    <h4 class="text-2xl font-bold text-[#D8315B]">内容活化</h4>
+                                </div>
+                                <h5 class="font-bold text-gray-800 mb-2">从“静态陈列”到“沉浸共情”</h5>
+                                <p class="text-gray-600">运用XR技术再造历史现场，发展互动数字叙事，赋予观众选择权，将单向灌输转变为多感官、高参与的故事体验。</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex md:w-1/2 justify-end">
+                            <div class="w-10 h-10 rounded-full bg-[#D8315B] border-4 border-gray-50 flex items-center justify-center text-white font-bold text-xl shadow-lg">1</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative mb-12">
+                    <div class="md:flex items-center">
+                        <div class="md:w-1/2 flex justify-end">
+                            <div class="w-full bg-white rounded-xl shadow-lg p-6 mr-0 md:mr-10 border border-gray-100">
+                                <div class="flex items-center mb-2">
+                                    <div class="text-4xl mr-4">📡</div>
+                                    <h4 class="text-2xl font-bold text-[#D8315B]">传播活化</h4>
+                                </div>
+                                <h5 class="font-bold text-gray-800 mb-2">构建全域智慧传播矩阵</h5>
+                                <p class="text-gray-600">精通短视频语言，打造永不落幕的“云展馆”，并善用用户生成内容（UGC）激活口碑传播，变“被动等待”为“主动触达”。</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex md:w-1/2 justify-start">
+                             <div class="w-10 h-10 rounded-full bg-[#D8315B] border-4 border-gray-50 flex items-center justify-center text-white font-bold text-xl shadow-lg">2</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative mb-12">
+                    <div class="md:flex items-center md:flex-row-reverse">
+                        <div class="md:w-1/2 flex justify-start">
+                            <div class="w-full bg-white rounded-xl shadow-lg p-6 ml-0 md:ml-10 border border-gray-100">
+                                <div class="flex items-center mb-2">
+                                    <div class="text-4xl mr-4">🛍️</div>
+                                    <h4 class="text-2xl font-bold text-[#D8315B]">消费活化</h4>
+                                </div>
+                                <h5 class="font-bold text-gray-800 mb-2">红色文创的IP化开发</h5>
+                                <p class="text-gray-600">引入现代消费品逻辑，遵循“美学-实用-情感”法则，将红色精神内核提炼为IP，开发融入日常生活的时尚文创产品。</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex md:w-1/2 justify-end">
+                             <div class="w-10 h-10 rounded-full bg-[#D8315B] border-4 border-gray-50 flex items-center justify-center text-white font-bold text-xl shadow-lg">3</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="md:flex items-center">
+                        <div class="md:w-1/2 flex justify-end">
+                            <div class="w-full bg-white rounded-xl shadow-lg p-6 mr-0 md:mr-10 border border-gray-100">
+                                <div class="flex items-center mb-2">
+                                    <div class="text-4xl mr-4">🌳</div>
+                                    <h4 class="text-2xl font-bold text-[#D8315B]">生态活化</h4>
+                                </div>
+                                <h5 class="font-bold text-gray-800 mb-2">“红色+”多业态协同</h5>
+                                <p class="text-gray-600">打破“文化孤岛”，将红色地标与乡村旅游、研学教育、社区建设深度融合，形成共建共享、共生共荣的文化生态。</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex md:w-1/2 justify-start">
+                             <div class="w-10 h-10 rounded-full bg-[#D8315B] border-4 border-gray-50 flex items-center justify-center text-white font-bold text-xl shadow-lg">4</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-500 mt-20 pt-8 border-t border-gray-200">
+            <p>数据来源：“星火燎原”社会实践队（天津师范大学）</p>
+            <p>基于对69份有效问卷及相关政策文件的综合分析</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const palette = {
+                darkText: '#1F2937',
+                red: '#D8315B',
+                yellow: '#F4C152',
+                lightBlue: '#64A6BD',
+                white: '#FFFFFF'
+            };
+
+            const wrapLabel = (str, maxWidth) => {
+                if (str.length <= maxWidth) {
+                    return str;
+                }
+                const words = str.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + word).length > maxWidth) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                }
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const tooltipConfig = {
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: palette.darkText,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            const ageData = {
+                labels: ['18-30岁', '31-50岁', '其他'],
+                datasets: [{
+                    label: '年龄分布',
+                    data: [60, 24, 16],
+                    backgroundColor: [palette.red, palette.yellow, palette.lightBlue],
+                    borderColor: palette.white,
+                    borderWidth: 4
+                }]
+            };
+            new Chart(document.getElementById('ageChart'), {
+                type: 'doughnut',
+                data: ageData,
+                options: { ...tooltipConfig, maintainAspectRatio: false, responsive: true }
+            });
+
+            const identityData = {
+                labels: ['本地居民', '外地游客', '学校/单位组织'],
+                datasets: [{
+                    label: '访客身份',
+                    data: [54, 38, 8],
+                    backgroundColor: [palette.lightBlue, palette.red, palette.yellow],
+                    borderColor: palette.white,
+                    borderWidth: 4
+                }]
+            };
+            new Chart(document.getElementById('identityChart'), {
+                type: 'pie',
+                data: identityData,
+                options: { ...tooltipConfig, maintainAspectRatio: false, responsive: true }
+            });
+
+            const channelData = {
+                labels: ['家人朋友介绍', '社交媒体', '旅游App/网站', '学校/单位组织'],
+                datasets: [{
+                    label: '了解途径 (人次)',
+                    data: [28, 25, 22, 19],
+                    backgroundColor: palette.red,
+                    borderColor: palette.yellow,
+                    borderWidth: 1
+                }]
+            };
+            new Chart(document.getElementById('channelChart'), {
+                type: 'bar',
+                data: channelData,
+                options: {
+                    ...tooltipConfig,
+                    indexAxis: 'y',
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    scales: {
+                        x: { ticks: { color: palette.darkText } },
+                        y: { ticks: { color: palette.darkText } }
+                    }
+                }
+            });
+
+            const frequencyData = {
+                labels: ['每年至少一次', '多年一次', '第一次', '几乎不参观'],
+                datasets: [{
+                    label: '参观频率 (%)',
+                    data: [50, 32, 12, 6],
+                    backgroundColor: palette.lightBlue,
+                    borderColor: palette.yellow,
+                    borderWidth: 1
+                }]
+            };
+            new Chart(document.getElementById('frequencyChart'), {
+                type: 'bar',
+                data: frequencyData,
+                options: {
+                    ...tooltipConfig,
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    scales: {
+                        x: { ticks: { color: palette.darkText } },
+                        y: { ticks: { color: palette.darkText } }
+                    }
+                }
+            });
+            
+            const attractionData = {
+                labels: ['本地居民', '外地游客', '学校/单位组织'],
+                datasets: [
+                    {
+                        label: '很有吸引力',
+                        data: [10, 9, 5],
+                        backgroundColor: '#22c55e', 
+                    },
+                    {
+                        label: '比较有吸引力',
+                        data: [10, 10, 4],
+                        backgroundColor: '#84cc16',
+                    },
+                    {
+                        label: '一般',
+                        data: [10, 5, 3],
+                        backgroundColor: palette.yellow,
+                    },
+                    {
+                        label: '吸引力不足',
+                        data: [5, 7, 2],
+                        backgroundColor: palette.red,
+                    }
+                ]
+            };
+            new Chart(document.getElementById('attractionChart'), {
+                type: 'bar',
+                data: attractionData,
+                options: {
+                    ...tooltipConfig,
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    scales: {
+                        x: { stacked: true, ticks: { color: palette.darkText } },
+                        y: { stacked: true, ticks: { color: palette.darkText } }
+                    }
+                }
+            });
+        });
+    </script>
+    <!-- 
+        Palette Choice: Energetic & Playful (Adapted for Light Theme).
+        Narrative Plan: Header -> Visitor Demographics -> Experience Gap -> 4-Part Solution -> Footer.
+        Visualization Choices:
+        - Age/Identity: Donut/Pie Chart (Goal: Inform/Compare, Library: Chart.js, Method: Canvas, NO SVG).
+        - Channels/Frequency: Bar Chart (Goal: Compare/Rank, Library: Chart.js, Method: Canvas, NO SVG).
+        - Attractiveness: Stacked Bar Chart (Goal: Compare, Library: Chart.js, Method: Canvas, NO SVG).
+        - 4-Part Strategy: Flowchart (Goal: Organize, Method: HTML/CSS with Tailwind, NO SVG, NO MERMAID JS).
+        Confirmation: NEITHER Mermaid JS NOR SVG were used in this output. All visuals are rendered via Chart.js (Canvas) or structured HTML/CSS.
+    -->
+</body>
+</html>
